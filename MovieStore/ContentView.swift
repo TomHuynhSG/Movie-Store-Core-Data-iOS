@@ -8,9 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var movies: FetchedResults<Movie>
+    
+    @State private var showingAddScreen = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            Text("Count: \(movies.count)")
+                .navigationTitle("Movie Store")
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        Button {
+                            showingAddScreen.toggle()
+                        } label: {
+                            Label("Add Movie", systemImage: "plus")
+                        }
+                    }
+                }
+                .sheet(isPresented: $showingAddScreen){
+                    AddMovieView()
+                }
+        }
     }
 }
 

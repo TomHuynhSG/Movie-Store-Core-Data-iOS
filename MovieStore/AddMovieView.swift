@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddMovieView: View {
     @Environment(\.managedObjectContext) var moc
+    @Environment(\.dismiss) var dismiss
     
     @State private var title = ""
     @State private var genre = ""
@@ -50,6 +51,7 @@ struct AddMovieView: View {
                         newMovie.review = review
                         
                         try? moc.save()
+                        dismiss()
                     }
                 }
             }
