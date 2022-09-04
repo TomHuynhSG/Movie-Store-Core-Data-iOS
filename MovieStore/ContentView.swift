@@ -19,7 +19,7 @@ struct ContentView: View {
             List {
                 ForEach(movies) { movie in
                     NavigationLink{
-                        Text(movie.title ?? "Unknown Movie")
+                        DetailMovieView(movie: movie)
                     } label: {
                         EmojiRatingView(rating: movie.rating)
                             .font(.largeTitle)

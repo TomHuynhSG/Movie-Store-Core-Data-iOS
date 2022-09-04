@@ -16,5 +16,5 @@ struct MovieStoreApp: App {
             ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
-    }
+     }
 }
