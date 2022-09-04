@@ -32,11 +32,18 @@ struct AddMovieView: View {
                 
                 Section{
                     TextEditor(text: $review)
+                    
+                    //Complex version with star image
+                    RatingStarsView(rating: $rating)
+                    
+                    /*: Simple version without star image
                     Picker("Rating", selection: $rating){
+                        Simple version without star image
                         ForEach(0..<6){
                             Text(String($0))
                         }
-                    }
+                    } */
+                    
                 } header : {
                     Text("Review")
                 }

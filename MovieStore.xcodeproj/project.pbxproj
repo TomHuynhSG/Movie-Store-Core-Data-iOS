@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B0D521128C49149005B55A7 /* AddMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D521028C49149005B55A7 /* AddMovieView.swift */; };
+		6B0D521328C49569005B55A7 /* RatingStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D521228C49569005B55A7 /* RatingStarsView.swift */; };
 		6BC2908C28C48A1D00617D84 /* MovieStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2908B28C48A1D00617D84 /* MovieStoreApp.swift */; };
 		6BC2908E28C48A1D00617D84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2908D28C48A1D00617D84 /* ContentView.swift */; };
 		6BC2909028C48A1F00617D84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BC2908F28C48A1F00617D84 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		6B0D521028C49149005B55A7 /* AddMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieView.swift; sourceTree = "<group>"; };
+		6B0D521228C49569005B55A7 /* RatingStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarsView.swift; sourceTree = "<group>"; };
 		6BC2908828C48A1D00617D84 /* MovieStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC2908B28C48A1D00617D84 /* MovieStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStoreApp.swift; sourceTree = "<group>"; };
 		6BC2908D28C48A1D00617D84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				6BC2909C28C48B1F00617D84 /* MovieDataModel.xcdatamodeld */,
 				6BC2908D28C48A1D00617D84 /* ContentView.swift */,
 				6B0D521028C49149005B55A7 /* AddMovieView.swift */,
+				6B0D521228C49569005B55A7 /* RatingStarsView.swift */,
 				6BC2908F28C48A1F00617D84 /* Assets.xcassets */,
 				6BC2909128C48A1F00617D84 /* Preview Content */,
 			);
@@ -149,6 +152,7 @@
 				6BC2908E28C48A1D00617D84 /* ContentView.swift in Sources */,
 				6BC290A028C48F7100617D84 /* DataController.swift in Sources */,
 				6BC2909E28C48B1F00617D84 /* MovieDataModel.xcdatamodeld in Sources */,
+				6B0D521328C49569005B55A7 /* RatingStarsView.swift in Sources */,
 				6BC2908C28C48A1D00617D84 /* MovieStoreApp.swift in Sources */,
 				6B0D521128C49149005B55A7 /* AddMovieView.swift in Sources */,
 			);
