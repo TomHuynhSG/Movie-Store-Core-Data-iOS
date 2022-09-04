@@ -12,6 +12,7 @@ An example of using Core Data model in SwiftUI iOS project!
   - Add a movie information and review.
   - Display the list of movies you have added.
   - Show the detail information of each movie in the list.
+  - Delete any movie in the movie list by swipping left on it or pressing Edit button.
 
 <p align="center">
   <img src="https://i.imgur.com/zvo7tzj.png" width="200" > 
