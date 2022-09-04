@@ -9,8 +9,8 @@ An example of using Core Data model in SwiftUI iOS project!
 ## 📖 Description
 
 - The Movie Store app allows you to:
-  - Add a movie information and review.
-  - Display the list of movies you have added. Also, the list is currently sorted by movie names.
+  - Add movie information and review (written paragraph and clickable star rating).
+  - Display the list of movies you have added. Also, the list is currently sorted by movie names and the movie rating is represented by an emoji.
   - Show the detail information of each movie in the list.
   - Delete any movie in the movie list by swipping left on it or pressing Edit button.
 
