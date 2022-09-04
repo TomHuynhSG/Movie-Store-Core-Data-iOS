@@ -15,8 +15,25 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-            Text("Count: \(movies.count)")
-                .navigationTitle("Movie Store")
+
+            List {
+                ForEach(movies) { movie in
+                    NavigationLink{
+                        Text(movie.title ?? "Unknown Movie")
+                    } label: {
+                        EmojiRatingView(rating: movie.rating)
+                            .font(.largeTitle)
+
+                        VStack(alignment: .leading){
+                            Text(movie.title ?? "Unknown Movie")
+                                .font(.headline)
+                            Text(movie.genre ?? "Unknown Movie")
+                                .font(.headline)
+                        }
+                    }
+                }
+            }
+                .navigationTitle("Movie Store (\(movies.count))")
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing){
                         Button {
