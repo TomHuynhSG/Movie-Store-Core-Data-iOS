@@ -11,13 +11,17 @@ struct DetailMovieView: View {
     let movie: Movie
     var body: some View {
         ScrollView{
+            
+            EmojiRatingView(rating: movie.rating)
+                .font(.largeTitle)
+            
             Text(movie.review ?? "No Review")
                 .padding()
             
             RatingStarsView(rating: .constant(Int(movie.rating)))
                 .font(.largeTitle)
             
-            Text(movie.genre?.uppercased() ?? "DRAMA")
+            Text(movie.genre?.uppercased() ?? "No Genre")
                 .font(.caption)
                 .fontWeight(.black)
                 .padding(8)
