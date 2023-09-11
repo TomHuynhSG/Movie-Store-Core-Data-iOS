@@ -49,6 +49,5 @@ struct DetailMovieView_Previews: PreviewProvider {
         newMovie.review = "This is a sample review."
         newMovie.rating = 4
         return DetailMovieView(movie: newMovie)
-            .environment(\.managedObjectContext, moc)
     }
 }
