@@ -14,6 +14,8 @@ struct DetailMovieView: View {
             
             EmojiRatingView(rating: movie.rating)
                 .font(.largeTitle)
+            Text(movie.title ?? "No Title")
+                .font(.largeTitle)
             
             Text(movie.review ?? "No Review")
                 .padding()
@@ -34,5 +36,19 @@ struct DetailMovieView: View {
         }
         .navigationTitle(movie.title ?? "Unknown Movie")
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+
+struct DetailMovieView_Previews: PreviewProvider {
+    static var previews: some View {
+        let moc = DataController.shared.container.viewContext
+        let newMovie = Movie(context: moc)
+        newMovie.title = "Sample Movie"
+        newMovie.genre = "Action"
+        newMovie.review = "This is a sample review."
+        newMovie.rating = 4
+        return DetailMovieView(movie: newMovie)
+            .environment(\.managedObjectContext, moc)
     }
 }
