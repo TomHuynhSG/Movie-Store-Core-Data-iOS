@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var moc
+    @Environment(\.modelContext) var modelContext
+    @Query(sort: \Movie.title) var movies: [Movie]
     
-    
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.title)]) var movies: FetchedResults<Movie>
     
     @State private var showingAddScreen = false
     
@@ -27,9 +27,9 @@ struct ContentView: View {
                             .font(.largeTitle)
 
                         VStack(alignment: .leading){
-                            Text(movie.title ?? "Unknown Movie")
+                            Text(movie.title)
                                 .font(.headline)
-                            Text(movie.genre ?? "Unknown Movie")
+                            Text(movie.genre)
                                 .font(.headline)
                         }
                     }
@@ -60,15 +60,12 @@ struct ContentView: View {
     func deleteMovies(at offsets: IndexSet) {
         for offset in offsets {
             let movie = movies[offset]
-            moc.delete(movie)
-            try? moc.save()
+            modelContext.delete(movie)
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .environment(\.managedObjectContext, DataController.shared.container.viewContext)
-    }
+#Preview {
+    ContentView()
+        .modelContainer(for: Movie.self)
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddMovieView: View {
-    @Environment(\.managedObjectContext) var moc
+    @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
     
     @State private var title = ""
@@ -50,14 +50,9 @@ struct AddMovieView: View {
                 
                 Section{
                     Button("Save"){
-                        let newMovie = Movie(context: moc)
-                        newMovie.id = UUID()
-                        newMovie.title = title
-                        newMovie.rating = Int16(rating)
-                        newMovie.genre = genre
-                        newMovie.review = review
+                        let newMovie = Movie(title: title, genre: genre, rating: Int16(rating), review: review)
                         
-                        try? moc.save()
+                        modelContext.insert(newMovie)
                         dismiss()
                     }
                 }
@@ -67,8 +62,6 @@ struct AddMovieView: View {
     }
 }
 
-struct AddMovieView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddMovieView()
-    }
+#Preview {
+    AddMovieView()
 }

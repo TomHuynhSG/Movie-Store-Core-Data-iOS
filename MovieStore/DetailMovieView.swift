@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct DetailMovieView: View {
     let movie: Movie
@@ -14,16 +15,16 @@ struct DetailMovieView: View {
             
             EmojiRatingView(rating: movie.rating)
                 .font(.largeTitle)
-            Text(movie.title ?? "No Title")
+            Text(movie.title)
                 .font(.largeTitle)
             
-            Text(movie.review ?? "No Review")
+            Text(movie.review)
                 .padding()
             
             RatingStarsView(rating: .constant(Int(movie.rating)))
                 .font(.largeTitle)
             
-            Text(movie.genre?.uppercased() ?? "No Genre")
+            Text(movie.genre.uppercased())
                 .font(.caption)
                 .fontWeight(.black)
                 .padding(8)
@@ -34,20 +35,8 @@ struct DetailMovieView: View {
                 .padding()
             
         }
-        .navigationTitle(movie.title ?? "Unknown Movie")
+        .navigationTitle(movie.title)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-
-struct DetailMovieView_Previews: PreviewProvider {
-    static var previews: some View {
-        let moc = DataController.shared.container.viewContext
-        let newMovie = Movie(context: moc)
-        newMovie.title = "Sample Movie"
-        newMovie.genre = "Action"
-        newMovie.review = "This is a sample review."
-        newMovie.rating = 4
-        return DetailMovieView(movie: newMovie)
-    }
-}
