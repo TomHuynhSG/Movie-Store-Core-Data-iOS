@@ -40,3 +40,17 @@ struct DetailMovieView: View {
     }
 }
 
+#Preview {
+    NavigationStack {
+        DetailMovieView(
+            movie: Movie(
+                title: "Interstellar",
+                genre: "Science Fiction",
+                rating: 5,
+                review: "A visually stunning science-fiction adventure."
+            )
+        )
+    }
+    .modelContainer(for: Movie.self, inMemory: true)
+}
+
